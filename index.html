@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Acogedor - Un rincón para relajarse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            light: '#D2B48C',
+                            DEFAULT: '#8B4513',
+                            dark: '#5D4037',
+                        },
+                        cream: '#FFF8E1',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./public/img/Coffee.ico" type="image/x-icon">
+</head>
+<body class="bg-cream min-h-screen">
+    <!-- Barra de navegación -->
+    <nav class="bg-coffee-dark text-white py-4 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">Café Acogedor</div>
+                
+                <!-- Botón hamburguesa (visible solo en móvil) -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Menú de navegación escritorio -->
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#inicio" class="hover:text-coffee-light transition">Inicio</a></li>
+                    <li><a href="#menu" class="hover:text-coffee-light transition">Menú</a></li>
+                    <li><a href="#nosotros" class="hover:text-coffee-light transition">Nosotros</a></li>
+                    <li><a href="#contacto" class="hover:text-coffee-light transition">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <!-- Menú móvil (inicialmente oculto) -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <ul class="mt-4 space-y-2 pb-2">
+                    <li><a href="#inicio" class="block hover:text-coffee-light transition py-2">Inicio</a></li>
+                    <li><a href="#menu" class="block hover:text-coffee-light transition py-2">Menú</a></li>
+                    <li><a href="#nosotros" class="block hover:text-coffee-light transition py-2">Nosotros</a></li>
+                    <li><a href="#contacto" class="block hover:text-coffee-light transition py-2">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <section id="inicio" class="py-20 bg-coffee-light bg-opacity-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-coffee-dark mb-4">Bienvenido a Café Acogedor</h1>
+            <p class="text-xl text-coffee mb-8 max-w-2xl mx-auto">Un espacio diseñado para que disfrutes del mejor café en un ambiente relajante y acogedor.</p>
+            <button class="bg-coffee text-white px-6 py-3 rounded-full font-medium hover:bg-coffee-dark transition">Ver nuestro menú</button>
+        </div>
+    </section>
+
+    <!-- Sección de especialidades -->
+    <section id="especialidades" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-coffee-dark text-center mb-12">Nuestras Especialidades</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Café 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img 
+                        src="./public/img/Cappuccino_Especial.jpg" 
+                        alt="Cappuccino Especial" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-coffee-dark mb-2">Cappuccino Especial</h3>
+                        <p class="text-gray-600">Nuestro cappuccino artesanal con espuma cremosa y un toque de canela.</p>
+                        <div class="mt-4 font-bold text-coffee">$3.50</div>
+                    </div>
+                </div>
+                <!-- Café 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img 
+                        src="./public/img/Latte_Caramelo.jpg" 
+                        alt="Latte Caramelo" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-coffee-dark mb-2">Latte Caramelo</h3>
+                        <p class="text-gray-600">Café espresso con leche vaporizada y un delicioso toque de caramelo.</p>
+                        <div class="mt-4 font-bold text-coffee">$4.25</div>
+                    </div>
+                </div>
+                <!-- Café 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img 
+                        src="./public/img/Mocaccino_Belga.jpg" 
+                        alt="Mocaccino Belga" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-coffee-dark mb-2">Mocaccino Belga</h3>
+                        <p class="text-gray-600">Deliciosa combinación de café espresso, chocolate belga y leche.</p>
+                        <div class="mt-4 font-bold text-coffee">$4.75</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de ambiente -->
+    <section id="ambiente" class="py-16 bg-coffee-light bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img 
+                        src="./public/img/cafeteria.jpg" 
+                        alt="Ambiente acogedor del café" 
+                        class="w-full h-80 object-cover rounded-lg shadow-lg"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-coffee-dark mb-4">Un ambiente relajante</h2>
+                    <p class="text-gray-700 mb-6">En Café Acogedor hemos creado un espacio donde podrás disfrutar de momentos tranquilos, ya sea para trabajar, leer un buen libro o simplemente disfrutar de una buena conversación.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="mr-2 text-coffee">✓</span>
+                            <span>Wifi gratuito de alta velocidad</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2 text-coffee">✓</span>
+                            <span>Música ambiental relajante</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2 text-coffee">✓</span>
+                            <span>Espacios cómodos y acogedores</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2 text-coffee">✓</span>
+                            <span>Área de lectura con libros gratuitos</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de testimonios -->
+    <section id="testimonios" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-coffee-dark text-center mb-12">Lo que dicen nuestros clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-coffee text-2xl mb-4">"</div>
+                    <p class="text-gray-700 mb-4">El mejor café que he probado en la ciudad. El ambiente es perfecto para trabajar o relajarse. Sin duda, mi lugar favorito.</p>
+                    <div class="font-bold text-coffee-dark">María García</div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-coffee text-2xl mb-4">"</div>
+                    <p class="text-gray-700 mb-4">Me encanta venir aquí los fines de semana. El cappuccino es excepcional y el personal siempre es amable. Totalmente recomendado.</p>
+                    <div class="font-bold text-coffee-dark">Carlos Rodríguez</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto" class="py-16 bg-coffee-dark text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Visítanos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-3xl mb-4">📍</div>
+                    <h3 class="text-xl font-bold mb-2">Dirección</h3>
+                    <p>Calle Principal 123<br>Ciudad, CP 12345</p>
+                </div>
+                <div>
+                    <div class="text-3xl mb-4">🕒</div>
+                    <h3 class="text-xl font-bold mb-2">Horario</h3>
+                    <p>Lunes a Viernes: 7:00 - 21:00<br>Sábados y Domingos: 8:00 - 22:00</p>
+                </div>
+                <div>
+                    <div class="text-3xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold mb-2">Contacto</h3>
+                    <p>Teléfono: (123) 456-7890<br>Email: hola@cafeacogedor.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-coffee-dark text-white py-6 border-t border-coffee">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Café Acogedor - Todos los derechos reservados</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-coffee-light transition">Facebook</a>
+                <a href="#" class="hover:text-coffee-light transition">Instagram</a>
+                <a href="#" class="hover:text-coffee-light transition">Twitter</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Div de prueba (visible solo durante el desarrollo) -->
+    <div class="fixed bottom-4 right-4 p-4 bg-white rounded-lg shadow-lg z-50 text-xs">
+        <h4 class="font-bold mb-2">Prueba de colores:</h4>
+        <div class="grid grid-cols-4 gap-2">
+            <div class="h-6 w-6 bg-coffee-light" title="coffee-light"></div>
+            <div class="h-6 w-6 bg-coffee" title="coffee"></div>
+            <div class="h-6 w-6 bg-coffee-dark" title="coffee-dark"></div>
+            <div class="h-6 w-6 bg-cream" title="cream"></div>
+        </div>
+    </div>
+
+    <!-- Script para el menú hamburguesa -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                // Cambiar entre mostrar y ocultar el menú móvil
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    // Cambiar el ícono de hamburguesa a X
+                    menuToggle.innerHTML = `
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    `;
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    // Restaurar el ícono de hamburguesa
+                    menuToggle.innerHTML = `
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    `;
+                }
+            });
+            
+            // Cerrar el menú móvil cuando se hace clic en un enlace
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    // Restaurar el ícono de hamburguesa
+                    menuToggle.innerHTML = `
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    `;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Estilos adicionales para Café Acogedor */
+
+/* Animación suave para los enlaces */
+a {
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para las tarjetas de productos */
+.hover\:scale-105:hover {
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.15);
+}
+
+/* Fuentes personalizadas */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, .font-bold {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+/* Efectos de transición */
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para las secciones con imágenes de fondo */
+section {
+    background-position: center;
+    background-size: cover;
+}
+
+/* Efectos para botones */
+button {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Estilo para las comillas en testimonios */
+.text-coffee.text-2xl {
+    font-size: 48px;
+    line-height: 0;
+    height: 20px;
+    font-family: Georgia, serif;
+}
+
+/* Efecto para las imágenes al cargar la página */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.h-48, .h-80 {
+    animation: fadeIn 1s ease-in-out;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Sombras suaves */
+.shadow-md, .shadow-lg {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Estilo personalizado para la barra de navegación fija al hacer scroll */
+@media (min-width: 768px) {
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    
+    nav.scrolled {
+        background-color: rgba(93, 64, 55, 0.95);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+}

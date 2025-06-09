@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+- Quiero que cada sección tenga definido un comentario que los haga diferenciar de otras secciones de el código  a - Quiero que tenga una pequeña descripción de que es lo que hace cada sección de código
